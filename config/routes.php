@@ -2,7 +2,8 @@
 
 return array(
 
-'' => 'site/index',     // indexAction in SiteController
+	'product/([0-9]+)' => 'product/view/$1',   	//actionView in ProductController
+	'' => 'site/index',     					// indexAction in SiteController
 
 );
 
