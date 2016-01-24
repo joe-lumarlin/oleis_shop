@@ -14,22 +14,22 @@
 			}
 		}
 
-		public funcion run(){
-			$uri = this->getURI();
+		public function run(){
+			$uri = $this->getURI();
 			foreach($this->routes as $uriPattern => $path){
 								if(preg_match("~$uriPattern~", $uri)){
-					$internalRoute = preg_replace("~$uriPattern~", $path, $uri) 
+					$internalRoute = preg_replace("~$uriPattern~", $path, $uri); 
 					/**
 					 * detetmine controller action and parameters
 					 */
 					$segments = explode('/', $internalRoute);	// розбивае строку на пыдстроки по /
-					$controllerName = ucfirst(array_shift($segments)) .'Controller.php';
-					$actionName = ucfirst(array_shift($segments));
+					$controllerName = ucfirst(array_shift($segments)) .'Controller';
+					$actionName = 'action'. ucfirst(array_shift($segments));
 					$parameters = $segments;
 
-					$controllerFile = ROOT. '/controllers/'. $controllerName;
+					$controllerFile = ROOT. '/controllers/'. $controllerName . '.php';
 					if(file_exists($controllerFile)){
-						include_once($contollerFile);
+						include_once($controllerFile);
 					}
 
 					$controllerObject = new $controllerName;
