@@ -6,7 +6,7 @@ class DB{
 		$params = include($paramsPath);
 
 		$dsn = "mysql:host={$params['host']}; dbname={$params['db_name']}";
-		$db = new PDO($params['user'], $params['password']);
+		$db = new PDO($dsn, $params['user'], $params['password']);
 
 		return $db;
 	}
