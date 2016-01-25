@@ -1,7 +1,5 @@
 <?php 
 
-include_once ROOT. '/components/DB.php';
-
 class Category{
 
 	public static function getCategoriesList(){

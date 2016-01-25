@@ -23,6 +23,7 @@
 					 * detetmine controller action and parameters
 					 */
 					$segments = explode('/', $internalRoute);	// розбивае строку на пыдстроки по /
+					
 					$controllerName = ucfirst(array_shift($segments)) .'Controller';
 					$actionName = 'action'. ucfirst(array_shift($segments));
 					$parameters = $segments;
@@ -35,7 +36,7 @@
 					$controllerObject = new $controllerName;
 
 					/**
-					 * взивае метод actionName класа controllerName з заданими параметрами
+					 * визивае метод actionName класа controllerName з заданими параметрами
 					*/
 					$result = call_user_func_array(array($controllerObject,$actionName), $parameters);
 

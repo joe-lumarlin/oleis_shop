@@ -32,8 +32,8 @@
                         <div class="col-sm-6">
                             <div class="contactinfo">
                                 <ul class="nav nav-pills">
-                                    <li><a href="#"><i class="fa fa-phone"></i> +38 093 000 11 22</a></li>
-                                    <li><a href="#"><i class="fa fa-envelope"></i> zinchenko.us@gmail.com</a></li>
+                                    <li><a href="#"><i class="fa fa-phone"></i> +38 098 777 70 27</a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i> olenarybchynska@gmail.com</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -84,16 +84,16 @@
                             </div>
                             <div class="mainmenu pull-left">
                                 <ul class="nav navbar-nav collapse navbar-collapse">
-                                    <li><a href="#">Главная</a></li>
-                                    <li class="dropdown"><a href="#">Магазин<i class="fa fa-angle-down"></i></a>
+                                    <li><a href="/">Главная</a></li>
+                                    <li class="dropdown"><a href="/catalog/">Магазин<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
-                                            <li><a href="#">Каталог товаров</a></li>
-                                            <li><a href="#">Корзина</a></li> 
+                                            <li><a href="/catalog/">Каталог товаров</a></li>
+                                            <li><a href="/cart/">Корзина</a></li> 
                                         </ul>
                                     </li> 
-                                    <li><a href="#">Блог</a></li> 
-                                    <li><a href="#">О магазине</a></li>
-                                    <li><a href="#">Контакты</a></li>
+                                    <li><a href="/blog/">Блог</a></li> 
+                                    <li><a href="/about/">О магазине</a></li>
+                                    <li><a href="/contacts/">Контакты</a></li>
                                 </ul>
                             </div>
                         </div>
