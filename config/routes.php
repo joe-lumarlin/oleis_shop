@@ -11,6 +11,8 @@ return array(
 	// категория товаров
 	'category/([0-9]+)/page-([0-9]+)' => 'catalog/category/$1/$2',  	// actionCategory in CatalogController
 	'category/([0-9]+)' => 'catalog/category/$1',					// actionCategory in CatalogController
+
+	'user/register' => 'user/register', 							// actionRegister in UserController
 	
 	// main page
 	'' => 'site/index',   	 										// actionIndex in SiteController

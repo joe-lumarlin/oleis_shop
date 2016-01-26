@@ -1,5 +1,4 @@
 <?php
-
 class CatalogController{
 
 	public function actionIndex(){
