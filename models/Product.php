@@ -2,7 +2,7 @@
 
 	class Product{
 		
-		const SHOW_BY_DEFAULT = 9;
+		const SHOW_BY_DEFAULT = 6;
 
 		/**
 		 * определенное количество последних просмотренных продуктов
@@ -42,30 +42,36 @@
 		 * @param  int $categoryId [параметр id категории, по умолчанию boolean = false]
 		 * @return [array] [массив данных из запроса]
 		 */
-		public static function getProductsListByCategory($categoryId = false){
-			$db = DB::getConnection();
+		public static function getProductsListByCategory($categoryId = false, $page = 1){
 
-			$products = array();
+			if($categoryId){
 
-			$result = $db->query("SELECT id, name, price, is_new FROM product "
-								. "WHERE status = '1' AND category_id = '$categoryId' "
-								. "ORDER BY id DESC "
-								. "LIMIT " .self::SHOW_BY_DEFAULT);
+				$page = intval($page);
+				$offset = ($page - 1) * self::SHOW_BY_DEFAULT; 
 
-			$count = 0;
-			while($row = $result->fetch()){
-				$products[$count]['id'] = $row['id'];
-				$products[$count]['name'] = $row['name'];
-				$products[$count]['price'] = $row['price'];
-				$products[$count]['is_new'] = $row['is_new'];
 
-				$count++;
-			}
+
+				$db = DB::getConnection();	
+				$products = array();	
+				$result = $db->query("SELECT id, name, price, is_new FROM product "
+									. "WHERE status = '1' AND category_id = '$categoryId' "
+									. "ORDER BY id ASC "
+									. "LIMIT ".self::SHOW_BY_DEFAULT
+									. " OFFSET ".$offset);
+	
+				$count = 0;
+				while($row = $result->fetch()){
+					$products[$count]['id'] = $row['id'];
+					$products[$count]['name'] = $row['name'];
+					$products[$count]['price'] = $row['price'];
+					$products[$count]['is_new'] = $row['is_new'];
+	
+					$count++;
+				}
 
 			return $products;
+			}
 		}
-
-
 
 
 		public static function getProductById($id){
@@ -79,6 +85,22 @@
 
 				return $result->fetch();
 			}
+		}
+
+
+		public static function getTotalProductsInCategory($categoryId){
+			$categoryId = intval($categoryId);
+
+			$db = DB::getConnection();
+
+			$result = $db->query('SELECT count(id) AS count FROM product '
+								. 'WHERE status = "1" AND category_id = "'.$categoryId.'"');
+
+			$result -> setFetchMode(PDO::FETCH_ASSOC);
+
+			$row = $result->fetch();
+
+			return $row['count'];	
 		}
 
 	}
