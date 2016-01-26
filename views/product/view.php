@@ -1,4 +1,4 @@
-z<?php include ROOT. '/views/layouts/header.php'; ?>
+<?php include ROOT. '/views/layouts/header.php'; ?>
 
         <section>
             <div class="container">
