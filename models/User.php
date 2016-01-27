@@ -43,7 +43,7 @@ class User{
 		return false;
 	}
 
-// not good working
+
 	public static function chekEmailExists($email){
 		
 		$db = DB::getConnection();
