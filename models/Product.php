@@ -103,6 +103,33 @@
 			return $row['count'];	
 		}
 
+
+		public static function getProductByIds($productsIds){
+
+			$products = array();
+
+			$db = DB::getConnection();
+
+			$idsString = implode(',', $productsIds);
+
+			$sql = "SELECT * FROM product WHERE status = '1' AND id IN ($idsString)";
+
+			$result = $db->query($sql);
+			$result->setFetchMode(PDO::FETCH_ASSOC);
+
+			$count = 0;
+			while($row = $result->fetch()){
+				$products[$count]['id'] = $row['id'];
+				$products[$count]['code'] = $row['code'];
+				$products[$count]['name'] = $row['name'];
+				$products[$count]['price'] = $row['price'];
+				$count++;
+			} 
+			return $products;
+		}
+
+
+
 	}
 
 ?>
