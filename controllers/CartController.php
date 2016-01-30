@@ -42,6 +42,15 @@
 			return true;
 		}
 
+
+		public function actionDelete($productId){
+			Cart::deleteProduct($productId);
+
+			// redirect to previous page
+			$referer = $_SERVER['HTTP_REFERER'];
+			header("Location: $referer");
+		}
+
 		
 	}
 

@@ -37,6 +37,7 @@
                                 <th>Удалить</th>
                             </tr>
                             <?php foreach ($products as $product): ?>
+                                <?php if($productInCart[$product['id']] > 0): ?>
                                 <tr>
                                     <td><?php echo $product['code'];?></td>
                                     <td>
@@ -52,6 +53,7 @@
                                         </a>
                                     </td>
                                 </tr>
+                                 <?php endif; ?>
                             <?php endforeach; ?>
                                 <tr>
                                     <td colspan="4">Общая стоимость, $:</td>

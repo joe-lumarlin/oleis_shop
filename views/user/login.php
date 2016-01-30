@@ -21,7 +21,9 @@
 				<form action="#" method="post">
 					<input type="email" name="email" placeholder="E-mail" value="<?php echo $email; ?>">
 					<input type="password" name="password" placeholder="Пароль" value="">
-					<input type="submit" name="submit" class="btn btn-default" value="Регистрация">
+					<input type="submit" name="submit" class="btn btn-default" value="Вход">
+					<p class="prep">или</p>
+					<p class="prep"><a href="/user/register/">Регистрация</a></p>
 				</form>
 	
 				</div>

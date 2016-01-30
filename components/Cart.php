@@ -25,6 +25,26 @@
 		}
 
 
+		public static function deleteProduct($productId){
+			$productId = intval($productId);
+
+			$productInCart = array();
+
+			if(isset($_SESSION['products'])){
+				$productInCart = $_SESSION['products'];
+			}
+
+
+			if(array_key_exists($productId, $productInCart)){
+				$productInCart[$productId]--;
+			}
+
+			$_SESSION['products'] = $productInCart;
+
+			return self::countItems();
+		}
+
+
 		/**
 		 * подсчет количества товаров в корзине (сессии)
 		 * @return int 

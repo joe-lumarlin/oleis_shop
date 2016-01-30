@@ -129,6 +129,29 @@
 		}
 
 
+		public static function getRecomendedProduct(){
+			
+			$recProdList = array();
+			$db = DB::getConnection();
+
+			$sql = 'SELECT * FROM product WHERE status = "1" AND is_recommended = "1" ORDER BY id DESC';
+
+			$result = $db->query($sql);
+			$result->setFetchMode(PDO::FETCH_ASSOC);
+
+			$count = 0;
+			while($row = $result->fetch()){
+				$recProdList[$count]['id'] = $row['id'];
+				$recProdList[$count]['name'] = $row['name'];
+				$recProdList[$count]['price'] = $row['price'];
+				$recProdList[$count]['is_new'] = $row['is_new'];
+				$count++;
+			}
+
+			return $recProdList;
+		}
+
+
 
 	}
 
