@@ -44,6 +44,18 @@ class User{
 	}
 
 
+
+
+	public static function checkPhoneNumber($phoneNumber){
+		if(strlen($phoneNumber) < 11){
+			return false;
+		}
+		return true;
+	} 
+
+
+
+
 	public static function chekEmailExists($email){
 		
 		$db = DB::getConnection();
@@ -79,9 +91,15 @@ class User{
 		return false;
 	}
 
+
+
+
 	public static function auth($userId){
 		$_SESSION['user'] = $userId;
 	}
+
+
+
 
 
 
@@ -94,12 +112,17 @@ class User{
 	}
 
 
+
+
+
 	public static function isGuest(){
 		if(isset($_SESSION['user'])){
 			return false;
 		}
 		return true;
 	}
+
+
 
 
 

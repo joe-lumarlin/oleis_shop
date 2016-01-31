@@ -67,7 +67,7 @@
 			if(isset($_SESSION['products'])){
 				return $_SESSION['products'];
 			}
-			return fasle;
+			return false;
 		}
 
 
@@ -82,6 +82,18 @@
 			}
 			return $total;
 		}
+
+
+
+
+		public static function clear(){
+			if(isset($_SESSION['products'])){
+				unset($_SESSION['products']);
+			}
+		}
+
+
+
 
 	}
 
