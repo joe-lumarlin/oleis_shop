@@ -32,8 +32,8 @@
                         <div class="col-sm-6">
                             <div class="contactinfo">
                                 <ul class="nav nav-pills">
-                                    <li><a href="#"><i class="fa fa-phone"></i> +38 098 777 70 27</a></li>
-                                    <li><a href="#"><i class="fa fa-envelope"></i> olenarybchynska@gmail.com</a></li>
+                                    <li><a href="#"><i class="fa fa-phone"></i> +38 098 777 00 77</a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i> olska@gmail.com</a></li>
                                 </ul>
                             </div>
                         </div>

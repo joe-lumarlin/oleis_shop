@@ -75,6 +75,7 @@ class AdminProductController extends AdminBase {
 
 
 	public function actionUpdate($id){
+		
 		self::checkAdmin();
 
 		// get data for uper list

@@ -3,7 +3,7 @@
 function __autoload($class_name){
 
 	/**
-	 * путь где искать подключаемые файлы
+	 * where we'll see autoload files
 	 * @var array
 	 */
 	$array_path = array(
