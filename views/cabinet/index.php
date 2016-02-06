@@ -8,6 +8,15 @@
 			<ul>
 				<li><a href="/cabinet/edit">Редактировать данные</a></li>
 				<li><a href="/user/history/">Список покупок</a></li>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+
 			</ul>
 		</div>
 	</div>

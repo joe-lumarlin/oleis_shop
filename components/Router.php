@@ -20,7 +20,7 @@
 								if(preg_match("~$uriPattern~", $uri)){
 					$internalRoute = preg_replace("~$uriPattern~", $path, $uri); 
 					/**
-					 * detetmine controller action and parameters
+					 * determine controller action and parameters
 					 */
 					$segments = explode('/', $internalRoute);	// розбивае строку на пыдстроки по /
 					
