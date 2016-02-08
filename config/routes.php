@@ -21,6 +21,8 @@ return array(
 	'user/register' => 'user/register', 							// actionRegister in UserController
 	'user/login' => 'user/login',									//actionLogin in UserController
 	'user/logout' => 'user/logout',									//actionLogin in UserController
+	'cabinet/edit' => 'cabinet/edit',								// actionEdit in CabinetController
+	'cabinet' => 'cabinet/index', 									// actionIdex in UserController
 
 	// admin manage product   
     'admin/product/create' => 'adminProduct/create',				// actionCreate in AdminProductController
@@ -34,11 +36,18 @@ return array(
 	'admin/category/delete/([0-9]+)' =>	'adminCategory/delete/$1',	// actiondelete in AdminCategoryController
 	'admin/category' => 'adminCategory/index',						// actionIdx in AdminCategoryController
 
-	'cabinet/edit' => 'cabinet/edit',								// actionEdit in CabinetController
-	'cabinet' => 'cabinet/index', 									// actionIdex in UserController
+	# admin order manage    
+    'admin/order/update/([0-9]+)' => 'adminOrder/update/$1',		// actionUpdate in AdminOrderController
+    'admin/order/delete/([0-9]+)' => 'adminOrder/delete/$1',		// actionDelete in AdminOrderController
+    'admin/order/view/([0-9]+)' => 'adminOrder/view/$1',			// actionView in AdminOrderController
+    'admin/order' => 'adminOrder/index',							// actionIndex in AdminOrderController
 
 	# admin panel
 	'admin' => 'admin/index',										// actionIndex in AdminController
+
+	# about shop
+	'contacts' => 'site/contact',
+	'about' => 'site/about',
 	
 	// main page
 	'' => 'site/index',   	 										// actionIndex in SiteController

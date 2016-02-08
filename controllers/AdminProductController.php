@@ -61,7 +61,11 @@ class AdminProductController extends AdminBase {
 			if($errors == false){
 				$id = Product::createProduct($options);
 
-				// images download
+				if($id){
+					if(is_uploaded_file($_FILES['image']['tmp_name'])){
+						move_uploaded_file($_FILES['image']['tmp_name'], $_SERVER['DOCUMENT_ROOT']. "/upload/images/products/".$id.".jpg");
+					}
+				}
 				
 			header('Location: /admin/product');
 
@@ -96,7 +100,10 @@ class AdminProductController extends AdminBase {
 			$options['status'] = $_POST['status'];
 
 				if(Product::updateProductById($id, $options)){
-					// image
+					
+					if(is_uploaded_file($_FILES['image']['tmp_name'])){
+						move_uploaded_file($_FILES['image']['tmp_name'], $_SERVER['DOCUMENT_ROOT']. "/upload/images/products/{$id}.jpg");
+					}
 				}
 			header('Location: /admin/product');
 		}

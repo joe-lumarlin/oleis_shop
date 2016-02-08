@@ -35,7 +35,7 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="/template/images/home/lenovo-flex.jpg" alt="" />
+                                            <img src="<?php echo Product::getImage($product['id']); ?>" alt="" />
                                             <h2><?php echo $product['price']; ?>$</h2>
                                             <p>
                                                 <a href="/product/<?php echo $product['id']; ?>">
@@ -74,7 +74,7 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="/template/images/home/Samsung%20SM-T705%20Galaxy%20Tab%20S%208.4.jpg" alt="" />
+                                            <img src="<?php echo Product::getImage($sliderItem['id']); ?>" alt="" />
                                             <h2>$<?php echo $sliderItem['price']; ?></h2>
                                             <a href="/product/<?php echo $sliderItem['id']; ?>">
                                                 <?php echo $product['name']; ?>
