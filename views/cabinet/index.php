@@ -7,7 +7,10 @@
 			<h4>Привет, <?php echo $user['name']; ?>!</h4>
 			<ul>
 				<li><a href="/cabinet/edit">Редактировать данные</a></li>
-				<li><a href="/user/history/">Список покупок</a></li>
+				<li><a href="/cart">Список покупок</a></li>
+				<?php if($admin): ?>
+				<li><a href="/admin">Админпанель</a></li>
+				<?php endif; ?>
 				<br>
 				<br>
 				<br>

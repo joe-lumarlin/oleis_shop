@@ -61,6 +61,14 @@
 
 
 
+		public function actionDelete($order_id){
+
+		self::checkAdmin();		
+			Order::deleteOrder($order_id);
+			header('Location: /admin/order');
+		
+		return true;		
+	}
 
 	}
 

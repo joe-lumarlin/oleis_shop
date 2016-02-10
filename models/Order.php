@@ -113,6 +113,19 @@
 			return $result->execute();
 		}
 
+		public static function deleteOrder($order_id){
+			$order_id = intval($order_id);
+
+			$db = DB::getConnection();
+
+			$query = 'DELETE FROM product_order WHERE id = :id';
+	
+			$result = $db->prepare($query);
+			$result->bindParam(':id', $order_id, PDO::PARAM_INT);
+	
+			return $result->execute();
+		}
+
 
 		
 

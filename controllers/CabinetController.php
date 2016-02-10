@@ -6,6 +6,8 @@
 			$userId = User::checkLogged();
 
 			$user = User::getUserById($userId);
+
+			$admin = AdminBase::checkAdmin();
 			
 			require_once(ROOT. '/views/cabinet/index.php');
 

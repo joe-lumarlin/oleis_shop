@@ -5,12 +5,17 @@ class User{
 	public static function register($name, $password, $email){
 		$db = DB::getConnection();
 
+		$options = ['salt' => MySalt::generate_salt(), 'cost' => 12 ];
+
+		$hash_password = password_hash($password, PASSWORD_DEFAULT, $options);
+
+		
 		$query = 'INSERT INTO user (name, password, email) '
 				. 'VALUES (:name, :password, :email)';		
 
 		$result = $db->prepare($query);
 		$result->bindParam(':name', $name, PDO::PARAM_STR);
-		$result->bindParam(':password', $password, PDO::PARAM_STR);
+		$result->bindParam(':password', $hash_password, PDO::PARAM_STR);
 		$result->bindParam(':email', $email, PDO::PARAM_STR);
 
 		return $result->execute();
