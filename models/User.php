@@ -82,15 +82,14 @@ class User{
 
 		$db = DB::getConnection();
 
-		$query = 'SELECT * FROM user WHERE email = :email AND password = :password';
+		$query = 'SELECT * FROM user WHERE email = :email';
 
 		$result = $db->prepare($query);
 		$result->bindParam(':email', $email, PDO::PARAM_STR);
-		$result->bindParam(':password', $password, PDO::PARAM_STR);
 		$result->execute();
-
 		$user = $result->fetch();
-		if($user){
+
+		if(password_verify($password, $user['password'])){
 			return $user['id'];
 		} 
 		return false;
