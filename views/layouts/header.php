@@ -32,8 +32,8 @@
                         <div class="col-sm-6">
                             <div class="contactinfo">
                                 <ul class="nav nav-pills">
-                                    <li><a href="#"><i class="fa fa-phone"></i> +38 098 777 70 27</a></li>
-                                    <li><a href="#"><i class="fa fa-envelope"></i> olenarybchynska@gmail.com</a></li>
+                                    <li><a href="#"><i class="fa fa-phone"></i> +38 098 777 00 77</a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i> olska@gmail.com</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -54,15 +54,21 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <div class="logo pull-left">
-                                <a href="index.html"><img src="/template/images/home/logo.png" alt="" /></a>
+                                <a href="/"><img src="/template/images/home/logo.png" alt="" /></a>
                             </div>
                         </div>
                         <div class="col-sm-8">
                             <div class="shop-menu pull-right">
                                 <ul class="nav navbar-nav">                                    
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i> Корзина</a></li>
-                                    <li><a href="#"><i class="fa fa-user"></i> Аккаунт</a></li>
-                                    <li><a href="#"><i class="fa fa-lock"></i> Вход</a></li>
+                                    <li><a href="/cart/index"><i class="fa fa-shopping-cart"></i> Корзина
+                                        <span id="cart-count">(<?php echo Cart::countItems(); ?>)</span>
+                                    </a></li>
+                                    <?php if(User::isGuest()): ?>
+                                    <li><a href="/user/login"><i class="fa fa-lock"></i> Вход</a></li>
+                                    <?php else: ?>
+                                    <li><a href="/cabinet/"><i class="fa fa-user"></i> Аккаунт</a></li>
+                                    <li><a href="/user/logout"><i class="fa fa-unlock"></i>Выход</a></li>
+                                    <?php endif; ?>
                                 </ul>
                             </div>
                         </div>
@@ -91,7 +97,7 @@
                                             <li><a href="/cart/">Корзина</a></li> 
                                         </ul>
                                     </li> 
-                                    <li><a href="/blog/">Блог</a></li> 
+                                    <li><a href="/">Блог</a></li> 
                                     <li><a href="/about/">О магазине</a></li>
                                     <li><a href="/contacts/">Контакты</a></li>
                                 </ul>

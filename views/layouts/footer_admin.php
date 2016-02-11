@@ -1,13 +1,16 @@
-<footer id="footer"><!--Footer-->
-            <div class="footer-bottom">
-                <div class="container">
-                    <div class="row">
-                        <p class="pull-left">Copyright © 2016</p>
-                        <p class="pull-right">Olei's Shop</p>
-                    </div>
-                </div>
+    <div class="page-buffer"></div>
+</div>
+
+<footer id="footer" class="page-footer"><!--Footer-->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <p class="pull-left">Copyright © 2016</p>
+                <p class="pull-right">Olei's Shop</p>
             </div>
-        </footer><!--/Footer-->
+        </div>
+    </div>
+</footer><!--/Footer-->
 
 
 
@@ -30,5 +33,6 @@
         });
     });
 </script>
-    </body>
+
+</body>
 </html>

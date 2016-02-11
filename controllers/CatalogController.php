@@ -14,6 +14,9 @@ class CatalogController{
 		return true;
 	}
 
+
+	
+
 	public function actionCategory($categoryId, $page = 1){
 		
 		$categories = array();
