@@ -900,12 +900,12 @@ h2.title {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 400;
-    height: 34px;
+    height: 30px;
     color: #696763;
 }
 
 .productinfo img{
-    width: 100%;
+    width: 80%;
 }
 
 .productinfo{
